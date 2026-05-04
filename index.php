@@ -14,6 +14,24 @@ $etudiants = [
 $matieres        = ["Maths", "Physique", "Informatique", "Anglais", "Francais"];
 $seuil_admission = 10;
 
-// TEST fonction 6
+echo "<pre>";
+
+foreach ($etudiants as $etudiant) {
+    echo genererReleve($etudiant, $matieres, $seuil_admission);
+    echo "\n";
+}
+
 $stats = calculerStatistiquesPromotion($etudiants, $seuil_admission);
-print_r($stats);
+$ligne = str_repeat("*", 42);
+
+echo "$ligne\n";
+echo "RAPPORT DE SYNTHESE DE LA PROMOTION\n";
+echo "$ligne\n";
+echo str_pad("Moyenne promo",     20) . ": " . $stats["moyenne_promo"]  . "/20\n";
+echo str_pad("Meilleur",          20) . ": " . $stats["meilleur"]        . "\n";
+echo str_pad("Moins bon",         20) . ": " . $stats["moins_bon"]       . "\n";
+echo str_pad("Admis",             20) . ": " . $stats["nb_admis"]        . "\n";
+echo str_pad("Ajournés",          20) . ": " . $stats["nb_ajournes"]     . "\n";
+echo str_pad("Taux de réussite",  20) . ": " . $stats["taux_reussite"]   . "%\n";
+echo "$ligne\n";
+echo "</pre>";
