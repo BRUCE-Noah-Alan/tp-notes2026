@@ -14,5 +14,6 @@ $etudiants = [
 $matieres        = ["Maths", "Physique", "Informatique", "Anglais", "Francais"];
 $seuil_admission = 10;
 
-// TEST fonction 4
-echo formaterNomComplet("Yassine", "Elbouari"); 
+// TEST fonction 5
+$premier= $etudiants[0]; 
+echo genererReleve($premier, $matieres, $seuil_admission);
