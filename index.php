@@ -14,6 +14,6 @@ $etudiants = [
 $matieres        = ["Maths", "Physique", "Informatique", "Anglais", "Francais"];
 $seuil_admission = 10;
 
-// TEST fonction 5
-$premier= $etudiants[0]; 
-echo genererReleve($premier, $matieres, $seuil_admission);
+// TEST fonction 6
+$stats = calculerStatistiquesPromotion($etudiants, $seuil_admission);
+print_r($stats);

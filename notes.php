@@ -54,6 +54,36 @@ function genererReleve($etudiant, $matieres, $seuil) {
     return $releve;
 }
 
+// FONCTION 6 : Statistiques de la promotion
+function calculerStatistiquesPromotion($etudiants, $seuil) {
+    $moyennes    = [];
+    $nb_admis    = 0;
+    $nb_ajournes = 0;
+
+    foreach ($etudiants as $e) {
+        $m = calculerMoyenne($e["notes"]);
+        $moyennes[] = $m;
+        if (estAdmis($m, $seuil)) $nb_admis++;
+        else $nb_ajournes++;
+    }
+
+    $idx_max = array_keys($moyennes, max($moyennes))[0];
+    $idx_min = array_keys($moyennes, min($moyennes))[0];
+
+    return [
+        "moyenne_promo"   => round(array_sum($moyennes) / count($moyennes), 2),
+        "meilleur"        => formaterNomComplet(
+                                $etudiants[$idx_max]["prenom"],
+                                $etudiants[$idx_max]["nom"]),
+        "moins_bon"       => formaterNomComplet(
+                                $etudiants[$idx_min]["prenom"],
+                                $etudiants[$idx_min]["nom"]),
+        "nb_admis"        => $nb_admis,
+        "nb_ajournes"     => $nb_ajournes,
+        "taux_reussite"   => round($nb_admis / count($etudiants) * 100, 1),
+    ];
+}
+
 
 
 
