@@ -20,6 +20,11 @@ function estAdmis($moyenne, $seuil) {
     return $moyenne >= $seuil;
 }
 
+// FONCTION 4 : Formater le nom complet
+function formaterNomComplet($prenom, $nom) {
+    return ucfirst(strtolower($prenom)) . " " . strtoupper($nom);
+}
+
 
 
 
