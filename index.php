@@ -14,5 +14,5 @@ $etudiants = [
 $matieres        = ["Maths", "Physique", "Informatique", "Anglais", "Francais"];
 $seuil_admission = 10;
 
-// TEST fonction 1
-echo calculerMoyenne([14, 12, 9, 15, 11]);
+// TEST fonction 2
+echo determinerMention(12.2);
