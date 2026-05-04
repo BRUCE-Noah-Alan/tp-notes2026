@@ -14,5 +14,6 @@ $etudiants = [
 $matieres        = ["Maths", "Physique", "Informatique", "Anglais", "Francais"];
 $seuil_admission = 10;
 
-// TEST fonction 2
-echo determinerMention(12.2);
+// TEST fonction 3
+var_dump(estAdmis(12.2, 10)); 
+var_dump(estAdmis(8.0, 10));   

@@ -15,6 +15,11 @@ function determinerMention($moyenne) {
     return "Insuffisant";
 }
 
+// FONCTION 3 : Est admis ?
+function estAdmis($moyenne, $seuil) {
+    return $moyenne >= $seuil;
+}
+
 
 
 
